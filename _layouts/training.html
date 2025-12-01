@@ -7,17 +7,44 @@ layout: default
   <!-- SIDEBAR -->
   <aside class="training-sidebar">
     <h3>Training Modules</h3>
+
+    {% assign titles = 
+      "Training Program Introduction,
+      Creating ODRL Policies for Data Sharing,
+      Negotiation and Contracting Plugin,
+      Supporting & Enhancing Dataset Discovery,
+      Unified Interface for Dataset Management,
+      Supporting & LLM Enhanced Data Profiling,
+      Environmentally Efficient Data Operation Workflows,
+      Data Processing Workflow / Consumer Dashboard,
+      Federated Machine Learning Plugin,
+      Pricing Plugin,
+      Monitoring and Compliance,
+      Secure Data Delivery Plugin,
+      Auditing & Verification Plugin,
+      Data Integration & Exchange Plugin,
+      Data Trading in Marketplaces (Nokia),
+      Data Trading in Marketplaces (Dawex),
+      Data Trading in Marketplaces (OKFN)"
+      | split: "," 
+    %}
+
+    {% assign current = page.name | replace: ".html", "" %}
+
     <ul>
-      {% assign current = page.name | replace: ".html","" %}
       {% for i in (1..17) %}
+      {% assign index = i | minus: 1 %}
+
       <li class="{% if current == i | string %}active{% endif %}">
-        <a href="{{ site.baseurl }}/trainings/{{ i }}.html">Training {{ i }}</a>
+        <a href="{{ site.baseurl }}/trainings/{{ i }}.html">
+          {{ titles[index] }}
+        </a>
       </li>
       {% endfor %}
     </ul>
   </aside>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <div class="training-main">
 
     <!-- BACK BUTTON -->
@@ -25,33 +52,23 @@ layout: default
       ← Back to Training Catalogue
     </a>
 
-    <!-- PAGE HEADER -->
     <header class="training-header">
       <h1>{{ page.title }}</h1>
-
       {% if page.description %}
       <p class="training-description">{{ page.description }}</p>
       {% endif %}
     </header>
 
-    <!-- VIDEO PLAYER -->
     {% if page.video %}
     <div class="training-video-container">
-      <iframe
-        src="{{ page.video }}"
-        title="Training Video"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
+      <iframe src="{{ page.video }}" allowfullscreen></iframe>
     </div>
     {% endif %}
 
-    <!-- BODY CONTENT -->
     <section class="training-content">
       {{ content }}
     </section>
 
-    <!-- NEXT/PREV NAV -->
     <div class="training-nav">
       {% if page.prev %}
       <a class="training-nav-btn left" href="{{ site.baseurl }}/trainings/{{ page.prev }}.html">
