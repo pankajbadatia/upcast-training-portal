@@ -1,9 +1,16 @@
-title: UPCAST Training
-description: A training blog for upcast Project
-baseurl: "/blog" # No subpath for GitHub Pages root repository
+title: "UPCAST Training Portal"
+description: "A training platform for the UPCAST Project."
+
+# Your GitHub Pages domain
 url: "https://pankajbadatia.github.io"
+
+# MUST match repository name exactly
+baseurl: "/upcast-training-portal"
+
+# Use Jekyll default theme (you override with your own HTML anyway)
 theme: minima
+
+# GitHub Pages supported plugins only
 plugins:
-  - jekyll-paginate
-paginate: 10 # Number of posts per page
-paginate_path: "/page:num/"
+  - jekyll-feed
+  - jekyll-seo-tag
