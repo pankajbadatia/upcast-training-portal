@@ -1,66 +1,47 @@
 ---
 layout: default
-title: Blog
-paginate: 10
+title: "UPCAST Training Portal"
 ---
 
-<section class="modern-blog-container">
-    <h1 class="modern-blog-title">Blog Archive</h1>
+<div class="upcast-landing">
 
-    <!-- Search Bar -->
-    <div class="modern-blog-search">
-        <input type="text" id="search-input" placeholder="Search blog posts...">
-        <button id="search-button" class="search-button">Search</button>
+  <!-- HERO SECTION -->
+  <section id="home" class="upcast-hero">
+    <div class="upcast-container">
+      <h1>UPCAST Online Training Portal</h1>
+      <p>
+        Explore UPCAST's webinars, plugin-based trainings, and marketplace
+        demonstrations to strengthen data-driven innovation across Europe.
+      </p>
+      <a class="upcast-btn upcast-btn--light" href="#catalogue">Explore Trainings</a>
     </div>
+  </section>
 
-    <!-- Sidebar -->
-    <div class="blog-sidebar-container">
-        <aside class="blog-sidebar">
-            <h2>Explore</h2>
-            <ul class="tree-menu">
-                {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-                {% for year in posts_by_year %}
-                <li>
-                    <button class="tree-toggle">{{ year.name }}</button>
-                    <ul class="tree-months">
-                        {% assign posts_by_month = year.items | group_by_exp: "post", "post.date | date: '%B'" %}
-                        {% for month in posts_by_month %}
-                        <li>
-                            <a href="#" data-month="{{ year.name }}-{{ month.name }}">{{ month.name }}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                {% endfor %}
-            </ul>
-            <button id="reset-filter" class="reset-button">Show All</button>
-        </aside>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="upcast-about">
+    <div class="upcast-container">
+      <h2>About the Programme</h2>
+      <p>
+        Led by <strong>CeADAR Ireland</strong>, UPCAST’s Transferability & Training (WP6 T6.3)
+        equips professionals, SMEs, and public institutions with practical tools to understand
+        and adopt data spaces, AI workflows, and open-source innovations.
+      </p>
     </div>
+  </section>
 
-    <!-- Blog Post Grid -->
-    <div id="post-container" class="blog-grid">
-        {% for post in paginator.posts %}
-        <div class="blog-card" data-month="{{ post.date | date: '%Y-%B' }}">
-            <div class="blog-card-content">
-                <h3 class="blog-card-title">
-                    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </h3>
-                <p class="blog-card-date">{{ post.date | date: "%Y-%m-%d" }}</p>
-                <p class="blog-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-                <a href="{{ post.url | prepend: site.baseurl }}" class="blog-card-read-more">Read More</a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+  <!-- TRAINING CATALOGUE (loaded from include) -->
+  {% include catalogue.html %}
 
-    <!-- Pagination -->
-    <div class="blog-pagination">
-        {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="pagination-link">Previous</a>
-        {% endif %}
-        <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-        {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="pagination-link">Next</a>
-        {% endif %}
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="upcast-about">
+    <div class="upcast-container">
+      <h2>Contact & Collaboration</h2>
+      <p>
+        For more information or collaboration on training activities, please contact
+        <strong>CeADAR Ireland</strong> or visit the
+        <a href="https://upcast-project.eu" target="_blank" rel="noopener">UPCAST website</a>.
+      </p>
     </div>
-</section>
+  </section>
+
+</div>

@@ -1,5 +1,5 @@
-title: My Blog
-description: A personal blog about AI, Data Science, and Technology.
+title: UPCAST Training
+description: A training blog for upcast Project
 baseurl: "/blog" # No subpath for GitHub Pages root repository
 url: "https://pankajbadatia.github.io"
 theme: minima
