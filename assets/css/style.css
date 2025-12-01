@@ -598,3 +598,212 @@ body#page-login-signup:has(#notice.generalbox) .continuebutton {
     }
 }
 
+
+
+
+/* ============================================================
+   TRAINING PAGE – GLOBAL WRAPPER
+   ============================================================ */
+
+.training-page-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1300px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/* ============================================================
+   SIDEBAR NAVIGATION
+   ============================================================ */
+
+.training-sidebar {
+  width: 260px;
+  background: #f1f5ff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  height: fit-content;
+}
+
+.training-sidebar h3 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.training-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.training-sidebar li {
+  margin-bottom: 10px;
+}
+
+.training-sidebar a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #1e3a8a;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.training-sidebar a:hover {
+  background: #e0e7ff;
+  color: #1e40af;
+}
+
+.training-sidebar li.active a {
+  background: #1e3a8a;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ============================================================
+   MAIN TRAINING CONTENT AREA
+   ============================================================ */
+
+.training-main {
+  flex: 1;
+  max-width: 900px;
+}
+
+/* Back Button */
+.training-back-btn {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #1e3a8a;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.25s ease;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.training-back-btn:hover {
+  background: #e0e7ff;
+  color: #1d4ed8;
+  transform: translateX(-4px);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.training-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.training-header h1 {
+  font-size: 2.2rem;
+  color: #1e3a8a;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.training-description {
+  font-size: 1.15rem;
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   RESPONSIVE VIDEO PLAYER
+   ============================================================ */
+
+.training-video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.training-video-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ============================================================
+   PAGE CONTENT
+   ============================================================ */
+
+.training-content {
+  font-size: 1.05rem;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.training-content h2,
+.training-content h3 {
+  color: #1e3a8a;
+  margin-top: 30px;
+}
+
+.training-content p {
+  margin-bottom: 18px;
+}
+
+/* ============================================================
+   NEXT / PREVIOUS NAV BUTTONS
+   ============================================================ */
+
+.training-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.training-nav-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #1e3a8a;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.training-nav-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.training-nav-btn.left {
+  margin-right: auto;
+}
+
+.training-nav-btn.right {
+  margin-left: auto;
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .training-page-container {
+    flex-direction: column;
+  }
+
+  .training-sidebar {
+    width: 100%;
+  }
+
+  .training-main {
+    max-width: 100%;
+  }
+}

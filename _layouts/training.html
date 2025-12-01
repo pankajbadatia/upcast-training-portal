@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div class="training-page-container">
+
+  <!-- SIDEBAR -->
+  <aside class="training-sidebar">
+    <h3>Training Modules</h3>
+    <ul>
+      {% assign current = page.name | replace: ".html","" %}
+      {% for i in (1..17) %}
+      <li class="{% if current == i | string %}active{% endif %}">
+        <a href="{{ site.baseurl }}/trainings/{{ i }}.html">Training {{ i }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="training-main">
+
+    <!-- BACK BUTTON -->
+    <a class="training-back-btn" href="{{ site.baseurl }}/#catalogue">
+      ← Back to Training Catalogue
+    </a>
+
+    <!-- PAGE HEADER -->
+    <header class="training-header">
+      <h1>{{ page.title }}</h1>
+
+      {% if page.description %}
+      <p class="training-description">{{ page.description }}</p>
+      {% endif %}
+    </header>
+
+    <!-- VIDEO PLAYER -->
+    {% if page.video %}
+    <div class="training-video-container">
+      <iframe
+        src="{{ page.video }}"
+        title="Training Video"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+    {% endif %}
+
+    <!-- BODY CONTENT -->
+    <section class="training-content">
+      {{ content }}
+    </section>
+
+    <!-- NEXT/PREV NAV -->
+    <div class="training-nav">
+      {% if page.prev %}
+      <a class="training-nav-btn left" href="{{ site.baseurl }}/trainings/{{ page.prev }}.html">
+        ← Previous Training
+      </a>
+      {% endif %}
+
+      {% if page.next %}
+      <a class="training-nav-btn right" href="{{ site.baseurl }}/trainings/{{ page.next }}.html">
+        Next Training →
+      </a>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
